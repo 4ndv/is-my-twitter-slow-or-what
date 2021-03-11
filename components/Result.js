@@ -22,6 +22,7 @@ const Result = ({ test, control, controlTaco }) => {
   const logParams = new URLSearchParams({ test: testSpeed.toFixed(2), control: controlSpeed.toFixed(2), controlTaco: controlTacoSpeed.toFixed(2), v: 2 })
 
   const logUrl = `https://imtsow-logs.vercel.app/api/log?${logParams.toString()}`
+  const darkkLogUrl = `https://darkk.net.ru/garbage/is-my-twitter-slow-or-what/log?${logParams.toString()}`
 
   return (
     <>
@@ -30,6 +31,7 @@ const Result = ({ test, control, controlTaco }) => {
       <p>Контроль 1 (эта же картинка с другого сервера): {controlSpeed.toFixed(2)} kbps, {Math.round(controlTime)} секунд(-а)</p>
       <p>Контроль 2 (эта же картинка с другого сервера, в адресе которого есть <code>t.co</code>): {controlTacoSpeed.toFixed(2)} kbps, {Math.round(controlTacoTime)} секунд(-а)</p>
       <img src={logUrl} width={1} height={1} />
+      <img src={darkkLogUrl} width={1} height={1} />
     </>
   )
 }
