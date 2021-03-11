@@ -26,7 +26,7 @@ const Speedometer = () => {
   let content = (
     <>
       <span>Поехали!</span>
-      <svg className="w-5 h-5 ml-3 fill-current" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+      <svg className="w-5 h-5 ml-3 fill-current" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
     </>
   )
 
@@ -37,7 +37,7 @@ const Speedometer = () => {
       <span>Проверяем...</span>
     )
 
-    img = <img src={imgSrc} onLoad={onLoad} width={1} height={1} style={{ opacity: 0.1 }} />
+    img = <img src={imgSrc} onLoad={onLoad} width={100} />
   }
 
   let resultContent = null
@@ -50,16 +50,14 @@ const Speedometer = () => {
   return (
     <>
       {resultContent}
-      <div className="flex">
-        <button
-          className="inline-flex items-center h-12 px-6 text-lg text-purple-100 transition-colors duration-150 bg-purple-600 hover:bg-purple-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 disabled:opacity-50"
-          disabled={isChecking}
-          onClick={run}
-        >
-          {content}
-        </button>
-        {img}
-      </div>
+      <button
+        className="inline-flex items-center h-12 px-6 text-lg text-purple-100 transition-colors duration-150 bg-purple-600 hover:bg-purple-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 disabled:opacity-50"
+        disabled={isChecking}
+        onClick={run}
+      >
+        {content}
+      </button>
+      {img}
     </>
   );
 };
