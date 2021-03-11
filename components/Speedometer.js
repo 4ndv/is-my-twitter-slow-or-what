@@ -51,25 +51,37 @@ const Speedometer = () => {
       <span>Проверяем...</span>
     )
 
-    img = (
-      <div className="flex">
-        <TestImg
-          type="control"
-          src="https://imgtest-nine.vercel.app/lohp_1302x955.png"
-          onLoad={onLoad}
-        />
-        <TestImg
-          type="control-taco"
-          src="https://t.co.test.lynx.pink/lohp_1302x955.png"
-          onLoad={onLoad}
-        />
-        <TestImg
-          type="test"
-          src="https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png"
-          onLoad={onLoad}
-        />
-      </div>
-    )
+    if (!testResult) {
+      img = (
+        <div className="flex">
+          <TestImg
+            type="test"
+            src="https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png"
+            onLoad={onLoad}
+          />
+        </div>
+      )
+    } else if (!controlResult) {
+      img = (
+        <div className="flex">
+          <TestImg
+            type="control"
+            src="https://imgtest-nine.vercel.app/lohp_1302x955.png"
+            onLoad={onLoad}
+          />
+        </div>
+      )
+    } else if (!controlTacoResult) {
+      img = (
+        <div className="flex">
+          <TestImg
+            type="control-taco"
+            src="https://t.co.test.lynx.pink/lohp_1302x955.png"
+            onLoad={onLoad}
+          />
+        </div>
+      )
+    }
   }
 
   let resultContent = null
