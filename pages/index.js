@@ -6,7 +6,7 @@ export default function Home() {
     <div className="flex justify-center sm:mt-10 xl:mt-20 mb-10">
       <Head>
         <title>Is my Twitter slow or what?</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <article className="prose lg:prose-xl">
         <h1>Твиттер у меня замедленный или как?</h1>
