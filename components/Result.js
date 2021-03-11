@@ -19,7 +19,7 @@ const Result = ({ test, control, controlTaco }) => {
     result = <b>не замедлен</b>
   }
 
-  const logParams = new URLSearchParams({ test: testSpeed.toFixed(2), control: controlSpeed.toFixed(2), controlTaco: controlTacoSpeed.toFixed(2) })
+  const logParams = new URLSearchParams({ test: testSpeed.toFixed(2), control: controlSpeed.toFixed(2), controlTaco: controlTacoSpeed.toFixed(2), v: 1 })
 
   const logUrl = `https://imtsow-logs.vercel.app/api/log?${logParams.toString()}`
 
