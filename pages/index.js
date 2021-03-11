@@ -3,7 +3,7 @@ import Speedometer from '../components/Speedometer'
 
 export default function Home() {
   return (
-    <div className="flex justify-center sm:mt-10 xl:mt-20 mb-10">
+    <div className="flex justify-center mt-10 xl:mt-20 mb-10 mr-4 ml-4">
       <Head>
         <title>Is my Twitter slow or what?</title>
         <link rel="icon" href="favicon.ico" />
