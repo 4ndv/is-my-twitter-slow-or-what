@@ -19,12 +19,17 @@ const Result = ({ test, control, controlTaco }) => {
     result = <b>не замедлен</b>
   }
 
+  const logParams = new URLSearchParams({ test: testSpeed.toFixed(2), control: controlSpeed.toFixed(2), controlTaco: controlTacoSpeed.toFixed(2) })
+
+  const logUrl = `https://imtsow-logs.vercel.app/api/log?${logParams.toString()}`
+
   return (
     <>
       <h3>&#8776; {testSpeed.toFixed(2)} kbps, {Math.round(testTime)} секунд(-а)</h3>
       <p>Скорее всего, твиттер у вас: <b>{result}</b></p>
       <p>Контроль 1 (эта же картинка с другого сервера): {controlSpeed.toFixed(2)} kbps, {Math.round(controlTime)} секунд(-а)</p>
       <p>Контроль 2 (эта же картинка с другого сервера, в адресе которого есть <code>t.co</code>): {controlTacoSpeed.toFixed(2)} kbps, {Math.round(controlTacoTime)} секунд(-а)</p>
+      <img src={logUrl} width={1} height={1} />
     </>
   )
 }
