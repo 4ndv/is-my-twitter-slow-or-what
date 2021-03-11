@@ -3,14 +3,13 @@ import Result from './Result';
 import TestImg from './TestImg';
 
 const Speedometer = () => {
-  const [isChecking, setIsChecking] = useState(false);
+  const [isChecking, setIsChecking] = useState(false)
+  const [key, setKey] = useState(Math.random())
 
-  const [testResult, setTestResult] = useState(false);
-  const [controlResult, setControlResult] = useState(false);
-  const [controlTacoResult, setControlTacoResult] = useState(false);
-
-  const done = testResult && controlResult && controlTacoResult;
-
+  const [testResult, setTestResult] = useState(false)
+  const [controlResult, setControlResult] = useState(false)
+  const [controlTacoResult, setControlTacoResult] = useState(false)
+  const done = testResult && controlResult && controlTacoResult
   const run = () => {
     setTestResult(null)
     setControlResult(null)
@@ -23,12 +22,15 @@ const Speedometer = () => {
     switch (type) {
       case 'test':
         setTestResult(result)
+        setKey(Math.random())
         break
       case 'control':
         setControlResult(result)
+        setKey(Math.random())
         break
       case 'control-taco':
         setControlTacoResult(result)
+        setKey(Math.random())
         break
     }
   }
@@ -58,6 +60,7 @@ const Speedometer = () => {
             type="test"
             src="https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png"
             onLoad={onLoad}
+            key={key}
           />
         </div>
       )
@@ -68,6 +71,7 @@ const Speedometer = () => {
             type="control"
             src="https://imgtest-nine.vercel.app/lohp_1302x955.png"
             onLoad={onLoad}
+            key={key}
           />
         </div>
       )
@@ -78,6 +82,7 @@ const Speedometer = () => {
             type="control-taco"
             src="https://t.co.test.lynx.pink/lohp_1302x955.png"
             onLoad={onLoad}
+            key={key}
           />
         </div>
       )
@@ -103,7 +108,7 @@ const Speedometer = () => {
       </button>
       {img}
     </>
-  );
-};
+  )
+}
 
 export default Speedometer
