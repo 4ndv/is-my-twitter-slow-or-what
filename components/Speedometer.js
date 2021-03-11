@@ -69,7 +69,7 @@ const Speedometer = () => {
         <div className="flex">
           <TestImg
             type="control"
-            src="https://imgtest-nine.vercel.app/lohp_1302x955.png"
+            src="https://freerunet.org/img/lohp_1302x955.png"
             onLoad={onLoad}
             key={key}
           />
@@ -80,7 +80,7 @@ const Speedometer = () => {
         <div className="flex">
           <TestImg
             type="control-taco"
-            src="https://t.co.test.lynx.pink/lohp_1302x955.png"
+            src="https://rknsoset.com/img/lohp_1302x955.png"
             onLoad={onLoad}
             key={key}
           />

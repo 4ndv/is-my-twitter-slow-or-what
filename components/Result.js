@@ -19,7 +19,7 @@ const Result = ({ test, control, controlTaco }) => {
     result = <b>не замедлен</b>
   }
 
-  const logParams = new URLSearchParams({ test: testSpeed.toFixed(2), control: controlSpeed.toFixed(2), controlTaco: controlTacoSpeed.toFixed(2), v: 3 })
+  const logParams = new URLSearchParams({ test: testSpeed.toFixed(2), control: controlSpeed.toFixed(2), controlTaco: controlTacoSpeed.toFixed(2), v: 4 })
 
   const logUrl = `https://imtsow-new.lynx.pink/log.png?${logParams.toString()}`
   const darkkLogUrl = `https://darkk.net.ru/garbage/is-my-twitter-slow-or-what/log?${logParams.toString()}`
