@@ -13,7 +13,7 @@ const TestImg = ({ type, src, onLoad }) => {
   const onLoadCallback = () => onLoad(type, +new Date() - startedAt)
 
   if (nonce) {
-    return <img className="inline-flex" src={`${src}?nocache=${nonce}`} onLoad={onLoadCallback} width={100} />
+    return <img className="inline-flex" src={`${src}?nocache=${nonce}`} onLoad={onLoadCallback} width={100} height={100} />
   }
 
   return null
