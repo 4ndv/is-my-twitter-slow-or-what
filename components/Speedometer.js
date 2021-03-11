@@ -1,27 +1,41 @@
-import { useCallback, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Result from './Result';
+import TestImg from './TestImg';
 
 const Speedometer = () => {
   const [isChecking, setIsChecking] = useState(false);
-  const [imgSrc, setImgSrc] = useState(null);
-  const [startedAt, setStartedAt] = useState(null);
-  const [result, setResult] = useState(false);
+
+  const [testResult, setTestResult] = useState(false);
+  const [controlResult, setControlResult] = useState(false);
+  const [controlTacoResult, setControlTacoResult] = useState(false);
+
+  const done = testResult && controlResult && controlTacoResult;
 
   const run = () => {
-    setStartedAt(null)
-    setResult(null)
-
-    // Картинка, хранящаяся на замедленном сервере твиттера + обход кеширования браузером
-    setImgSrc(`https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png?nocache=${Math.random()}`)
+    setTestResult(null)
+    setControlResult(null)
+    setControlTacoResult(null)
 
     setIsChecking(true)
-    setStartedAt(+new Date())
   }
 
-  const onLoad = () => {
-    setIsChecking(false)
-    setResult(+new Date())
+  const onLoad = (type, result) => {
+    switch (type) {
+      case 'test':
+        setTestResult(result)
+        break
+      case 'control':
+        setControlResult(result)
+        break
+      case 'control-taco':
+        setControlTacoResult(result)
+        break
+    }
   }
+
+  useEffect(() => {
+    if (done && isChecking) setIsChecking(false)
+  }, [isChecking, done])
 
   let content = (
     <>
@@ -37,13 +51,31 @@ const Speedometer = () => {
       <span>Проверяем...</span>
     )
 
-    img = <img src={imgSrc} onLoad={onLoad} width={100} />
+    img = (
+      <div className="flex">
+        <TestImg
+          type="control"
+          src="https://imgtest-nine.vercel.app/lohp_1302x955.png"
+          onLoad={onLoad}
+        />
+        <TestImg
+          type="control-taco"
+          src="https://t.co.test.lynx.pink/lohp_1302x955.png"
+          onLoad={onLoad}
+        />
+        <TestImg
+          type="test"
+          src="https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png"
+          onLoad={onLoad}
+        />
+      </div>
+    )
   }
 
   let resultContent = null
 
-  if (!isChecking && result) {
-    resultContent = <Result started={startedAt} ended={result} />
+  if (!isChecking && done) {
+    resultContent = <Result test={testResult} control={controlResult} controlTaco={controlTacoResult} />
     content = <span>Проверить еще раз</span>
   }
 
