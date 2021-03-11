@@ -1,65 +1,28 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Speedometer from '../components/Speedometer'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className="flex justify-center sm:mt-10 xl:mt-20 mb-10">
       <Head>
-        <title>Create Next App</title>
+        <title>Is my Twitter slow or what?</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+      <article className="prose lg:prose-xl">
+        <h1>Твиттер у меня замедленный или как?</h1>
+        <p>Эта страничка достаточно простым способом пытается это выяснить:</p>
+        <p>Загружаем картинку с <code>abs.twimg.com</code> (организация, замедленная на территории Российской Федерации), и считаем сколько это заняло времени. Проверка может занять <b>до минуты</b>.</p>
+        <Speedometer />
+        <p>
+          Технические обсуждения всего происходящего идут на <a target="_blank" href="https://ntc.party/t/twitter/907/">NTC</a>, присоединяйтесь!
         </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+        <p>
+          Исходники <a target="_blank" href="https://github.com/4ndv/is-my-twitter-slow-or-what">на Github</a>.
+        </p>
+        <p>
+          Подписывайтесь на <a target="_blank" href="https://twitter.com/libneko">замедленный твиттер</a>.
+        </p>
+      </article>
     </div>
   )
 }
