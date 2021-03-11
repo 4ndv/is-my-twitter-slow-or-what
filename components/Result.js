@@ -6,7 +6,7 @@ const Result = ({ started, ended }) => {
 
   let result = null
 
-  if (speed < 700) {
+  if (speed < 600) {
     result = <b>замедлен</b>
   } else {
     result = <b>не замедлен</b>
