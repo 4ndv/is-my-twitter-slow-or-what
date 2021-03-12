@@ -18,7 +18,7 @@ export default function Home() {
           Технические обсуждения всего происходящего идут на <a target="_blank" href="https://ntc.party/t/twitter/907/">NTC</a>, присоединяйтесь!
         </p>
         <p>
-          Исходники <a target="_blank" href="https://github.com/4ndv/is-my-twitter-slow-or-what">на Github</a>.
+          Исходники <a target="_blank" href="https://github.com/4ndv/is-my-twitter-slow-or-what">на Github</a>. Спасибо <a target="_blank" href="http://darkk.net.ru">Леониду "darkk" Евдокомову</a> за помощь в тестировании и анализе данных!
         </p>
         <p>
           Подписывайтесь на <a target="_blank" href="https://twitter.com/libneko">замедленный твиттер</a>.
