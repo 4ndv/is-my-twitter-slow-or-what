@@ -21,7 +21,7 @@ export default function Home() {
           Исходники <a target="_blank" href="https://github.com/4ndv/is-my-twitter-slow-or-what">на Github</a>. Спасибо <a target="_blank" href="http://darkk.net.ru">Леониду "darkk" Евдокомову</a> за помощь в тестировании и анализе данных!
         </p>
         <p>
-          Подписывайтесь на <a target="_blank" href="https://twitter.com/libneko">замедленный твиттер</a>.
+          Подписывайтесь на <a target="_blank" href="https://twitter.com/libneko">замедленный твиттер</a>. Made by <a href="https://lynx.pink">me</a>.
         </p>
       </article>
     </div>
