@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.twitter-button {
+  @apply inline-flex items-center h-12 px-6 text-lg text-blue-50 transition-colors duration-150 bg-blue-600 hover:bg-blue-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 mb-3 !important;
+  text-decoration: none !important;
+}
